@@ -4,6 +4,7 @@ input{
     border-radius: 5px;
     padding: 3px;
     margin: 5px 5px;
+    width: 100%;
 }
 .input:focus{
     outline: none;

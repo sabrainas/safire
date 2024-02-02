@@ -16,67 +16,75 @@ export default function PasseEscolar() {
                     </div>
                 </header>
 
-                <form>
-                    <div className=''>
-                        <label htmlFor="name">Nome:
-                            <input type="text" placeholder="Enter your name" />
-                        </label>
+                <form >
+                    <div className='flex flex-col'>
+                        <div className="flex justify-between">
+                            <label htmlFor="name">Nome:
+                                <input type="text" className='w-full' />
+                            </label>
 
-                        <label htmlFor="ra">RA:
-                            <input type="text" inputMode="numeric" />
-                        </label>
-                        <label htmlFor="course" >Curso:
-                            <select name="course" id="course">
-                                <option value="">Selecione o seu curso: </option>
-                                <option value="ads">Análise e Desenvolvimento de Sistemas</option>
-                                <option value="gpi">Gestão da Produção Industrial</option>
-                                <option value="la">Logística Aeroportuária</option>
-                                <option value="log">Logística</option>
-                            </select>
-                        </label>
+                            <label htmlFor="ra" >RA:
+                                <input type="text" inputMode="numeric" />
+                            </label>
+                        </div>
+                        <div className="flex">
+                            <label htmlFor="course" >Curso:
+                                <select name="course" id="course">
+                                    <option value="">Selecione o seu curso: </option>
+                                    <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+                                    <option value="gpi">Gestão da Produção Industrial</option>
+                                    <option value="la">Logística Aeroportuária</option>
+                                    <option value="log">Logística</option>
+                                </select>
+                            </label>
 
-                        <label htmlFor="semestre">Semestre:
-                            <select name="semestre" id="semestre">
-                                <option value="">Selecione o semestre: </option>
-                                <option value="1">1º Semestre</option>
-                                <option value="2">2º Semestre</option>
-                                <option value="3">3º Semestre</option>
-                                <option value="4">4º Semestre</option>
-                                <option value="5">5º Semestre</option>
-                                <option value="6">6º Semestre</option>
-                                <option value="7">7º Semestre</option>
-                                <option value="8">8º Semestre</option>
-                            </select>
-                        </label>
-
+                            <label htmlFor="semestre">Semestre:
+                                <select name="semestre" id="semestre">
+                                    <option value="">Selecione o semestre: </option>
+                                    <option value="1">1º Semestre</option>
+                                    <option value="2">2º Semestre</option>
+                                    <option value="3">3º Semestre</option>
+                                    <option value="4">4º Semestre</option>
+                                    <option value="5">5º Semestre</option>
+                                    <option value="6">6º Semestre</option>
+                                    <option value="7">7º Semestre</option>
+                                    <option value="8">8º Semestre</option>
+                                </select>
+                            </label>
+                        </div>
                     </div>
 
-                    <label htmlFor="rg">RG: <input
-                        type="text"
-                        placeholder="__.____.___-_"
-                    />
-                    </label>
+                    <div className='flex flex-col'>
+                        <div className='flex justify-between'>
+                            <label htmlFor="rg">RG: <input
+                                type="text"
+                                placeholder="__.____.___-_"
+                            />
+                            </label>
+                            <label htmlFor="city">
+                                Nome da Mãe:
+                                <input type="text" placeholder='' />
+                            </label>
 
-                    <label htmlFor="date-expedition">Data de Expedição:
-                        <input type="date" placeholder='dd/mm/aaaa' />
-                    </label>
+                        </div>
 
-                    <label htmlFor="date-birthday"> Data de nascimento:
-                        <input type="date" placeholder='dd/mm/aaaa' />
-                    </label>
+                        <div className="flex justify-between">
+                            <label htmlFor="date-birthday"> Data de nascimento:
+                                <input type="date" placeholder='dd/mm/aaaa' />
+                            </label>
+                            <label htmlFor="date-expedition">Data de Expedição:
+                                <input type="date" placeholder='dd/mm/aaaa' />
+                            </label>
+                        </div>
 
-                    <label htmlFor="cpf">CPF:
-                        <input type="text" placeholder='___-___-___-__' />
-                    </label>
+                        <label htmlFor="cpf">CPF:
+                            <input type="text" placeholder='___-___-___-__' />
+                        </label>
+                    </div>
 
                     <label htmlFor="telefone">
                         Telefone:
                         <input type="text" placeholder='(99) 99999-9999' />
-                    </label>
-
-                    <label htmlFor="city">
-                        Nome da Mãe:
-                        <input type="text" placeholder='' />
                     </label>
 
                     <label htmlFor="email">
