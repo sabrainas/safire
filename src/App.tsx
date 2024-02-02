@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import PasseEscolar from './components/Forms/PasseEscolar';
 
 function App() {
+  const [rg, setRG] = useState<string>('');
+  const [isValid, setIsValid] = useState<boolean | null>(null);
+
+  const formatarRG = (input: string): string => {
+    const rgNumerico = input.replace(/[^\d]/g, ''); // Remove caracteres não numéricos
+    const rgFormatado = rgNumerico.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4');
+    return rgFormatado;
+  };
+
+  const handleRGChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rgInput = e.target.value;
+    const rgFormatado = formatarRG(rgInput);
+    setRG(rgFormatado);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validação
+    const rgSemPontuacao = rg.replace(/[.-]/g, '');
+    const rgValid = rgSemPontuacao.length === 9 && /^\d+$/.test(rgSemPontuacao);
+
+    // Verificar se outros campos obrigatórios foram preenchidos
+    const semestreValue = (e.currentTarget.elements.namedItem('semestre') as HTMLSelectElement)?.value;
+
+    setIsValid(rgValid && semestreValue !== '');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section className='flex items-center justify-center min-h-screen bg-red-900'>
+        <div>
+          <PasseEscolar />
+        </div>
+      </section>
+    </>
   );
 }
 

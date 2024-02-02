@@ -1,0 +1,23 @@
+input{
+    display: block;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 5px 5px;
+}
+.input:focus{
+    outline: none;
+}
+
+label{
+    font-weight: 500;
+    margin: 5px;
+}
+
+select{
+    display: block;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 5px 5px;
+}
