@@ -2,113 +2,117 @@ import React from 'react'
 import './style.css'
 
 export default function PasseEscolar() {
+    
     return (
         <>
-            <section className='border rounded-lg shadow-lg flex flex-col flex-wrap w-full max-w-[40rem] p-6 bg-gray-200'>
 
-                <header className='flex flex-col'>
-                    <div>
-                        <h1 className='text-lg text-center font-bold my-3'>Passe Escolar</h1>
+            <form >
+                {/* etapa 1  */}
+                <div className='flex flex-col'>
+                    <div className='w-full'>
+                        <label htmlFor="name">Nome:
+                            <input type="text" />
+                        </label>
+
+                        <label htmlFor="name-mother">
+                            Nome da Mãe:
+                            <input type="text" />
+                        </label>
                     </div>
 
-                    <div className='text-center font-semibold my-3 pb-6'>
-                        <p>Preencha os seus dados</p>
+
+                    <div className="flex">
+                        <label htmlFor="course" >Curso:
+                            <select name="course" id="course">
+                                <option value="">Selecione o seu curso: </option>
+                                <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+                                <option value="gpi">Gestão da Produção Industrial</option>
+                                <option value="la">Logística Aeroportuária</option>
+                                <option value="log">Logística</option>
+                            </select>
+                        </label>
+
+                        <label htmlFor="semestre">Semestre:
+                            <select name="semestre" id="semestre">
+                                <option value="">Selecione o semestre: </option>
+                                <option value="1">1º Semestre</option>
+                                <option value="2">2º Semestre</option>
+                                <option value="3">3º Semestre</option>
+                                <option value="4">4º Semestre</option>
+                                <option value="5">5º Semestre</option>
+                                <option value="6">6º Semestre</option>
+                                <option value="7">7º Semestre</option>
+                                <option value="8">8º Semestre</option>
+                            </select>
+                        </label>
+
+                        <label htmlFor="ra" >RA:
+                            <input type="text" inputMode="numeric" className='w-44' size={13} />
+                        </label>
+
                     </div>
-                </header>
+                </div>
 
-                <form >
-                    <div className='flex flex-col'>
-                        <div className="flex justify-between">
-                            <label htmlFor="name">Nome:
-                                <input type="text" className='w-full' />
-                            </label>
+                {/* etapa 2 */}
+                <div className='flex flex-col'>
+                    <div className='grid grid-cols-3'>
+                        <label htmlFor="rg">RG: <input
+                            type="text"
+                            maxLength={9}
+                        />
+                        </label>
 
-                            <label htmlFor="ra" >RA:
-                                <input type="text" inputMode="numeric" />
-                            </label>
-                        </div>
-                        <div className="flex">
-                            <label htmlFor="course" >Curso:
-                                <select name="course" id="course">
-                                    <option value="">Selecione o seu curso: </option>
-                                    <option value="ads">Análise e Desenvolvimento de Sistemas</option>
-                                    <option value="gpi">Gestão da Produção Industrial</option>
-                                    <option value="la">Logística Aeroportuária</option>
-                                    <option value="log">Logística</option>
-                                </select>
-                            </label>
+                        <label htmlFor="date-birthday"> Data de nascimento:
+                            <input type="date" placeholder='dd/mm/aaaa' />
+                        </label>
+                        <label htmlFor="date-expedition">Data de Expedição:
+                            <input type="date" placeholder='dd/mm/aaaa' />
+                        </label>
 
-                            <label htmlFor="semestre">Semestre:
-                                <select name="semestre" id="semestre">
-                                    <option value="">Selecione o semestre: </option>
-                                    <option value="1">1º Semestre</option>
-                                    <option value="2">2º Semestre</option>
-                                    <option value="3">3º Semestre</option>
-                                    <option value="4">4º Semestre</option>
-                                    <option value="5">5º Semestre</option>
-                                    <option value="6">6º Semestre</option>
-                                    <option value="7">7º Semestre</option>
-                                    <option value="8">8º Semestre</option>
-                                </select>
-                            </label>
-                        </div>
                     </div>
 
-                    <div className='flex flex-col'>
-                        <div className='flex justify-between'>
-                            <label htmlFor="rg">RG: <input
-                                type="text"
-                                placeholder="__.____.___-_"
-                            />
-                            </label>
-                            <label htmlFor="city">
-                                Nome da Mãe:
-                                <input type="text" placeholder='' />
-                            </label>
-
-                        </div>
-
-                        <div className="flex justify-between">
-                            <label htmlFor="date-birthday"> Data de nascimento:
-                                <input type="date" placeholder='dd/mm/aaaa' />
-                            </label>
-                            <label htmlFor="date-expedition">Data de Expedição:
-                                <input type="date" placeholder='dd/mm/aaaa' />
-                            </label>
-                        </div>
-
+                    <div className='grid grid-cols-2'>
+                        <label htmlFor="email">
+                            E-mail:
+                            <input type="email" placeholder='' />
+                        </label>
                         <label htmlFor="cpf">CPF:
                             <input type="text" placeholder='___-___-___-__' />
                         </label>
                     </div>
+                </div>
 
-                    <label htmlFor="telefone">
-                        Telefone:
-                        <input type="text" placeholder='(99) 99999-9999' />
-                    </label>
+                {/* etapa 3 */}
+                <div className='flex flex-col'>
+                    <div className="w-full flex justify-between">
+                        <label htmlFor="cep">
+                            Cep:
+                            <input type="text" placeholder='_____-___' />
+                        </label>
 
-                    <label htmlFor="email">
-                        E-mail:
-                        <input type="text" placeholder='' />
-                    </label>
+                        <label htmlFor="number">
+                            nº:
+                            <input type="text" placeholder='' />
+                        </label>
+
+                        <label htmlFor="telefone">
+                            Telefone:
+                            <input type="tel" placeholder='(99) 99999-9999' />
+                        </label>
+                    </div>
 
                     <label htmlFor="address">
                         Endereço:
                         <input type="text" placeholder='' />
                     </label>
+                </div>
+            </form>
 
-                    <label htmlFor="number">
-                        nº:
-                        <input type="text" placeholder='' />
-                    </label>
-
-                    <label htmlFor="cep">
-                        Cep:
-                        <input type="text" placeholder='_____-___' />
-                    </label>
-                </form>
-            </section>
-
+            <div className='flex justify-center'>
+                <button className='bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded'>
+                    Enviar
+                </button>
+            </div>
         </>
     )
 }
